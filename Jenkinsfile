@@ -2,9 +2,15 @@
 stage 'CI'
 node {
     
-    notify("Started")
+    checkout([
+         $class: 'GitSCM',
+         branches: scm.branches,
+         doGenerateSubmoduleConfigurations: scm.doGenerateSubmoduleConfigurations,
+         extensions: scm.extensions,
+         userRemoteConfigs: scm.userRemoteConfigs
+         ])
 
-    checkout SCM
+    //checkout SCM
 
     //git branch: 'jenkins2-course', 
     //    url: 'https://github.com/bmrussell/solitaire-systemjs-course'
