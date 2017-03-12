@@ -1,6 +1,9 @@
 // bmrussell
 stage 'CI'
 node {
+    
+    notify("Started")
+
     checkout SCM
 
     //git branch: 'jenkins2-course', 
